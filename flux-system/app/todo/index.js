@@ -18,6 +18,8 @@ app.get('/healthz', (_, response) => {
 });
 
 app.get('/todos', async (_, response) => {
+  console.log(`Todo operation: Get all`);
+
   const todos = await Todo.findAll();
 
   response.status(200).json(todos);
