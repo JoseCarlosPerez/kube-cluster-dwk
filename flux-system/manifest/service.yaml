@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: projectxx-svc
+  namespace: projectxx
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {
+    "projectxx":"http-hc-config-projectxx",
+    "todo":"http-hc-config-todo"
+    }}'
+spec:
+  type: NodePort
+  selector:
+    app: projectxx
+  ports:
+    - name: projectxx
+      port: 2345
+      protocol: TCP
+      targetPort: 3000
+    - name: todo
+      port: 2346
+      protocol: TCP
+      targetPort: 5000
