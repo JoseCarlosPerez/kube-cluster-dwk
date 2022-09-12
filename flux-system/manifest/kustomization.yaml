@@ -4,10 +4,9 @@ resources:
   - configmap.yaml
   - persistencevolume.yaml
   - persistentvolumeclaim.yaml
-  - projectxx-backendConfig.yaml
-  - todo-backendConfig.yaml
   - statefulset.yaml
   - deployment.yaml
+  - horizontalpodautoscaler.yaml
   - service.yaml
   - ingress.yaml
 images:
