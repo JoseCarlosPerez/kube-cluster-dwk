@@ -47,7 +47,7 @@ jobs:
 
     # Update yamls
     - name: Update yamls
-      working-directory: flux-system/manifests
+      working-directory: flux-system/manifest
       run: |
         - kustomize edit set image PROJECTXX/IMAGE=jc40/projectxx:${{ github.sha }}
         - kustomize edit set image PROJECTXX/IMAGE=jc40/todo:${{ github.sha }}
